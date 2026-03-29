@@ -53,3 +53,6 @@ coverage-report/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+.vs/
+.vscode/
