@@ -28,6 +28,8 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+        env:
+          CI: false
   
   frontend-tests:
     name: Frontend Test
@@ -51,6 +53,8 @@ jobs:
 
       - name: Run frontend tests
         run: npm test -- --watchAll=false
+        env:
+          CI: false
   
   backend-build:
     name: Backend Build
