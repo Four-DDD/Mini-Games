@@ -5,6 +5,7 @@ import { markJustStartedNewSession } from "./ReturnToGameBanner";
 export function useSignalRService({ hubUrl, gameType, roomCode, playerId, token, isSpectator = false }) {
   const connectionRef = useRef(null);
   const [connectionState, setConnectionState] = useState("Disconnected");
+  const [reconnected, setReconnected] = useState(false);
   const isCleaningUpRef = useRef(false);
 
   useEffect(() => {
@@ -147,11 +148,11 @@ export function useSignalRService({ hubUrl, gameType, roomCode, playerId, token,
         connectionRef.current = null;
       }
     };
-  }, [hubUrl, playerId, gameType, roomCode, isSpectator]);
+  }, [hubUrl, playerId, gameType, roomCode]);
 
   return {
     connection: connectionRef.current,
     connectionState,
-    reconnected: false,
+    reconnected,
   };
 }
