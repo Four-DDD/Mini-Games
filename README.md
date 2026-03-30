@@ -1,5 +1,7 @@
 # software_engineering_course_2
 
+# TEST
+
 ## Commands to start tests:
 ```
 dotnet test backend.Tests --collect:"XPlat Code Coverage" --settings coverlet.runsettings
